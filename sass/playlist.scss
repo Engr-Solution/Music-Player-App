@@ -1,0 +1,182 @@
+@import "./mixin_files";
+@import "./variable";
+
+.open {
+  left: 0;
+}
+
+.playlist_wrapper {
+  background: $background;
+  position: absolute;
+  top: 0%;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  transition: .5s;
+  .playlist_heading {
+    width: 100%;
+    @include flex_centered(space-between);
+    padding: 20px 25px;
+    color: $color_white;
+    cursor: pointer;
+  }
+  h4 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.15em;
+    font-weight: 700;
+    color: $color_white;
+  }
+  .playlist_body {
+    width: 100%;
+    height: 82.5%;
+    padding: 0px 25px;
+    overflow-y: scroll;
+    backdrop-filter: blur(12px);
+   
+    &::-webkit-scrollbar {
+      width: 4px;
+      background: $gradient;
+      border-radius: 10px;
+      display: block;
+    }
+    &::-webkit-scrollbar-track {
+      color: $gradient;
+    }
+    &::-webkit-scrollbar-thumb {
+      width: 4px;
+      background: $gradient;
+      border-radius: 10px;
+    }
+    .playlist_list {
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      .playlist_item {
+        width: 100%;
+        height: 65px;
+        background: #a7a5a5;
+        padding: 12px 15px;
+        margin: 7.5px auto;
+        border-radius: 15px;
+        @include flex_centered(space-between);
+        backdrop-filter: blur(12px);
+        cursor: pointer;
+        .playlist-song_duration {
+          color: $color_black;
+          font-size: 0.7em;
+          align-self: flex-end;
+        }
+        .playlist_song-info {
+          width: 150px;
+          height: 100%;
+          color: $color_black;
+          display: flex;
+          justify-content: space-between;
+          flex-direction: column;
+          margin-right: auto;
+
+          .playlist_song-title {
+            font-size: 0.95em;
+            font-weight: 600;
+          }
+          .playlist_song-artist {
+            font-size: 0.75em;
+            font-weight: 500;
+          }
+        }
+      }
+      .playlist_item.playing {
+        background: linear-gradient(90deg, $pink 0%, $violet 100%);
+        .playlist-song_duration {
+          color: $color_white;
+        }
+        .playlist_song-info {
+          color: $color_white;
+        }
+      }
+    }
+  }
+
+  .playlist_controls {
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    width: 100%;
+    height: 20.5%;
+    max-height: 20.5%;
+    background: $background;
+    padding: 10px;
+    border-radius: 20px 20px 0px 0px;
+    @include flex_centered(space-between);
+    flex-direction: column;
+    backdrop-filter: blur(6.5px);
+    z-index: 10;
+    .playlist_song-info {
+      text-align: center;
+      color: $color_white;
+      font-size: 0.77em;
+      font-weight: 500;
+      line-height: 20px;
+    }
+    .playlist_btns {
+      width: 100%;
+      padding: 10px;
+      @include flex-centered(center);
+      span {
+        width: 30px;
+        height: 30px;
+        color: $color_white;
+        text-align: center;
+        line-height: 30px;
+        font-size: 1.5em;
+        cursor: pointer;
+      }
+      button {
+        width: 40px;
+        height: 40px;
+        margin: 0 15px;
+        border: none;
+        border-radius: 50%;
+        background: $gradient;
+        &:hover {
+          @include box_shadow_hover($color_white);
+        }
+        &:active span {
+          transform: scale(1.2);
+          transition: 0.3s;
+        }
+        span {
+          color: $color_white;
+          font-size: 1.85rem;
+          font-weight: 600;
+        }
+        @include flex_centered(center);
+      }
+    }
+  }
+}
+//
+.open {
+  left: 0;
+  animation: openAnim 0.5s linear;
+}
+.close {
+  left: 100%;
+  animation: closeAnim 0.5s linear;
+}
+.play {
+  background: #006da4;
+}
+.active_btn {
+  background: red;
+  box-shadow: 0px 3.27235px 3.27235px rgba(0, 0, 0, 0.4),
+    inset 0px 0px 4.55px 4.55px #ff8888;
+}
+.active_item {
+  background: rgba(255, 136, 136, 1);
+}
+.playlistAudio {
+  display: none;
+}

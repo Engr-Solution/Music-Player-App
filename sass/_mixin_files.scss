@@ -1,0 +1,27 @@
+// Mixin for flex-center
+@mixin flex_centered($horizontal_orient) {
+  display: flex;
+  align-items: center;
+  justify-content: $horizontal_orient;
+}
+// Mixin for box-shadow
+@mixin box_shadow($color) {
+  box-shadow: 0px 3.27235px 3.27235px rgba(0, 0, 0, 0.4),
+    inset 0px 0px 4.55px 4.55px $color;
+
+  //   inset 0px -3.27235px 3.27235px 1.63618px $color,
+  //   inset 0px 3.27235px 3.27235px 1.63618px $color;
+}
+// Mixin for box-shadow_hover
+@mixin box_shadow_hover($color) {
+  box-shadow: 0px 3.8px 3.8px rgba(0, 0, 0, 0.4),
+    inset 0px 0px 3.8px 1.8px $color;
+  // inset 0px 3.8px 3.8px 1.8px 3. $color;
+}
+@mixin effect {
+    flex-direction: column;
+      background: $gradient;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+}

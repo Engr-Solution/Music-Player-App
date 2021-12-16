@@ -1,0 +1,195 @@
+.open {
+  left: 0;
+}
+
+.playlist_wrapper {
+  background: #4e4e4e;
+  position: absolute;
+  top: 0%;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  transition: 0.5s;
+}
+.playlist_wrapper .playlist_heading {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 25px;
+  color: #f9f9f9;
+  cursor: pointer;
+}
+.playlist_wrapper h4 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.15em;
+  font-weight: 700;
+  color: #f9f9f9;
+}
+.playlist_wrapper .playlist_body {
+  width: 100%;
+  height: 82.5%;
+  padding: 0px 25px;
+  overflow-y: scroll;
+  -webkit-backdrop-filter: blur(12px);
+          backdrop-filter: blur(12px);
+}
+.playlist_wrapper .playlist_body::-webkit-scrollbar {
+  width: 4px;
+  background: linear-gradient(180deg, #ff74a4 0%, #9f6ea3 100%);
+  border-radius: 10px;
+  display: block;
+}
+.playlist_wrapper .playlist_body::-webkit-scrollbar-track {
+  color: linear-gradient(180deg, #ff74a4 0%, #9f6ea3 100%);
+}
+.playlist_wrapper .playlist_body::-webkit-scrollbar-thumb {
+  width: 4px;
+  background: linear-gradient(180deg, #ff74a4 0%, #9f6ea3 100%);
+  border-radius: 10px;
+}
+.playlist_wrapper .playlist_body .playlist_list {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+.playlist_wrapper .playlist_body .playlist_list .playlist_item {
+  width: 100%;
+  height: 65px;
+  background: #a7a5a5;
+  padding: 12px 15px;
+  margin: 7.5px auto;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  -webkit-backdrop-filter: blur(12px);
+          backdrop-filter: blur(12px);
+  cursor: pointer;
+}
+.playlist_wrapper .playlist_body .playlist_list .playlist_item .playlist-song_duration {
+  color: #4e4e4e;
+  font-size: 0.7em;
+  align-self: flex-end;
+}
+.playlist_wrapper .playlist_body .playlist_list .playlist_item .playlist_song-info {
+  width: 150px;
+  height: 100%;
+  color: #4e4e4e;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-right: auto;
+}
+.playlist_wrapper .playlist_body .playlist_list .playlist_item .playlist_song-info .playlist_song-title {
+  font-size: 0.95em;
+  font-weight: 600;
+}
+.playlist_wrapper .playlist_body .playlist_list .playlist_item .playlist_song-info .playlist_song-artist {
+  font-size: 0.75em;
+  font-weight: 500;
+}
+.playlist_wrapper .playlist_body .playlist_list .playlist_item.playing {
+  background: linear-gradient(90deg, #ff74a4 0%, #9f6ea3 100%);
+}
+.playlist_wrapper .playlist_body .playlist_list .playlist_item.playing .playlist-song_duration {
+  color: #f9f9f9;
+}
+.playlist_wrapper .playlist_body .playlist_list .playlist_item.playing .playlist_song-info {
+  color: #f9f9f9;
+}
+.playlist_wrapper .playlist_controls {
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+  width: 100%;
+  height: 20.5%;
+  max-height: 20.5%;
+  background: #4e4e4e;
+  padding: 10px;
+  border-radius: 20px 20px 0px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  -webkit-backdrop-filter: blur(6.5px);
+          backdrop-filter: blur(6.5px);
+  z-index: 10;
+}
+.playlist_wrapper .playlist_controls .playlist_song-info {
+  text-align: center;
+  color: #f9f9f9;
+  font-size: 0.77em;
+  font-weight: 500;
+  line-height: 20px;
+}
+.playlist_wrapper .playlist_controls .playlist_btns {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.playlist_wrapper .playlist_controls .playlist_btns span {
+  width: 30px;
+  height: 30px;
+  color: #f9f9f9;
+  text-align: center;
+  line-height: 30px;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+.playlist_wrapper .playlist_controls .playlist_btns button {
+  width: 40px;
+  height: 40px;
+  margin: 0 15px;
+  border: none;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #ff74a4 0%, #9f6ea3 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.playlist_wrapper .playlist_controls .playlist_btns button:hover {
+  box-shadow: 0px 3.8px 3.8px rgba(0, 0, 0, 0.4), inset 0px 0px 3.8px 1.8px #f9f9f9;
+}
+.playlist_wrapper .playlist_controls .playlist_btns button:active span {
+  transform: scale(1.2);
+  transition: 0.3s;
+}
+.playlist_wrapper .playlist_controls .playlist_btns button span {
+  color: #f9f9f9;
+  font-size: 1.85rem;
+  font-weight: 600;
+}
+
+.open {
+  left: 0;
+  -webkit-animation: openAnim 0.5s linear;
+          animation: openAnim 0.5s linear;
+}
+
+.close {
+  left: 100%;
+  -webkit-animation: closeAnim 0.5s linear;
+          animation: closeAnim 0.5s linear;
+}
+
+.play {
+  background: #006da4;
+}
+
+.active_btn {
+  background: red;
+  box-shadow: 0px 3.27235px 3.27235px rgba(0, 0, 0, 0.4), inset 0px 0px 4.55px 4.55px #ff8888;
+}
+
+.active_item {
+  background: #ff8888;
+}
+
+.playlistAudio {
+  display: none;
+}

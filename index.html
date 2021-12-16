@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="./img/music.jpg" >
+  <title>Music Player App</title>
+  <!-- Material Icons CDN -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="./styles/style.css">
+  <link rel="stylesheet" href="./styles/playlist.css">
+</head>
+<body>
+<!-- Invisible Audio section -->
+<audio src="" id="audio"></audio>
+<!-- Container -->
+<div class="container">
+  <div id="loader" class="loader">
+    <div class="app_name">
+      <h2 class="effect">Free Music</h2>
+      <h3 class="effect">Free Download</h3>
+    </div>
+    <div class="loader_bars">
+      <div style="background: rgb(97, 114, 206);" class="bar"></div>
+      <div style="background: rgb(185, 34, 223);" class="bar"></div>
+      <div style="background: rgb(168, 130, 238);" class="bar"></div>
+      <div style="background: rgb(130, 238, 193);" class="bar"></div>
+      <div style="background: rgb(235, 124, 20);" class="bar"></div>
+      <div style="background: rgb(235, 245, 93);" class="bar"></div>
+    </div>
+    <div class="footer">
+      <img src="./img/music.jpg" alt="logo" class="logo">
+      <div class="app_name-title">
+        <span class="highlight effect">i</span>Play | 
+        <span class="additional">Home of Music</span>
+      </div>
+    </div>
+  </div>
+
+    <!-- <div class="bg_container"></div> -->
+   <div id="home" class="wrapper">
+     <!-- top heading -->
+     <div class="page-heading">
+       <span id="openBtn" class="material-icons playlist">menu</span>
+       <h4>Now Playing</h4>
+     </div>
+     <!-- animating shape -->
+     <div class="circular-disk">
+         <div class="disk" id="disk">
+         </div>
+     </div>
+     <!-- song's title -->
+     <div class="song-info">
+       <p id="title" class="song-title">Title</p>
+       <p id="artist" class="song-artist">Song artist</p id="artist">
+     </div>
+     <!-- function icons -->
+     <div class="group-icons">
+      <div id="volume-slider" class="volume-slider">
+        <input type="range" name="volume" id="volume-range" class="volume-range" value="1" max="1" step="0.1">
+        <span id="volume" class="material-icons volume">volume_up</span>
+      </div>
+      <span title="repeat" id="repeat" class="material-icons repeat">repeat</span>
+      <span class="material-icons favorite">favorite</span>
+     </div>
+  <!-- Song Duration Display -->
+  <div id="progress-area" class="progress-area">
+    <div id="progress-bar" class="progress-bar"></div>
+    <div class="song-timer">
+      <span id="current-time" class="current-time">00:00</span>
+      <span id="total-time" class="max-duration">00:00</span>
+    </div>
+  </div>
+  <!-- Song Control Btns -->
+  <div class="control-btns">
+    <button id="prevBtn" class="prev">
+      <span class="material-icons">skip_previous</span>
+    </button>
+    <button id="playBtn" class="playBtn play">
+      <span class="material-icons">play_arrow</span>
+    </button>
+    <button id="nextBar" class="next">
+      <span class="material-icons">skip_next</span>
+    </button>
+  </div>
+
+  <!-- Playlists -->
+  <div id="songs_list" class="playlist_wrapper">
+    <div class="playlist_top">
+      <div class="playlist_heading">
+        <span id="closeBtn" class="material-icons playlist_closeBtn">arrow_back</span>
+        <h4>Playlist</h4>
+        <span class="material-icons">music</span> 
+      </div>
+    </div>
+    <div class="playlist_body">
+      <!-- Lists -->
+      <div id="playlist_list" class="playlist_list"></div> 
+    <!-- Controls -->
+  </div>
+    <div class="playlist_controls">
+      <!--Song info -->
+      <div class="playlist_song-info">
+        <h4 class="playlist_song-title song-title">Title</h4>
+        <p class="playlist_song-artist song-artist">Song Artist</p>
+      </div>
+      <!-- Btns -->
+      <div class="playlist_btns">
+        <button class="prev">
+          <span class="material-icons">skip_previous</span>
+        </button>
+        <button class="playBtn play">
+          <span class="material-icons">play_arrow</span>
+        </button> 
+        <button class="next">
+          <span class="material-icons">skip_next</span>
+        </button>
+      </div>
+    </div>
+  </div>
+ </div>
+</div> 
+  <!-- Main Js File -->
+  <script src="./scripts/data.js"></script>
+  <script src="./scripts/app.js"></script>
+  <script>
+    load = setTimeout(() => {
+      const loader = document.querySelector('#loader');
+      loader.style.display = 'none';
+    }, 4000);
+  </script>
+</body>
+</html>
